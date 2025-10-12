@@ -24,13 +24,13 @@ export default function exbotanical({
   if (pluginOpts === 'all') {
     // eslint-disable-next-line no-param-reassign -- non-library or app, just a config
     pluginOpts = {
-      xml: false,
-      shell: false,
-      toml: false,
-      nginx: false,
-      properties: false,
-      sql: false,
-      solidity: false,
+      xml: true,
+      shell: true,
+      toml: true,
+      nginx: true,
+      properties: true,
+      sql: true,
+      solidity: true,
     }
   }
 
