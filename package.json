@@ -25,11 +25,10 @@
   "scripts": {
     "build": "tsup --clean --dts",
     "lint": "eslint .",
-    "lint:fix": "npm run lint -- --fix",
-    "pretest": "npm run build",
+    "pretest": "pnpm build",
     "test": "vitest --run",
     "test:dev": "vitest",
-    "prepack": "npm run build",
+    "prepack": "pnpm build",
     "prepare": "simple-git-hooks",
     "typecheck": "tsc --noEmit",
     "release": "bumpp && npm publish"
