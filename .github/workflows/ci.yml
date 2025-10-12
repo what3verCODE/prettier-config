@@ -4,37 +4,13 @@ on:
   push:
     branches:
       - master
-
   pull_request:
     branches:
       - master
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-
-      - name: Install
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Lint
-        run: npm run lint
-
-      - name: Typecheck
-        run: npm run typecheck
-
-  test:
+  static_analysis:
     runs-on: ${{ matrix.os }}
-
     strategy:
       matrix:
         node: [lts/*]
@@ -44,19 +20,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set node ${{ matrix.node }}
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Install
-        run: npm ci
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Build
-        run: npm run build
+        run: pnpm run build
 
       - name: Lint
-        run: npm run lint
+        run: pnpm run lint
 
       - name: Typecheck
-        run: npm run typecheck
+        run: pnpm run typecheck
