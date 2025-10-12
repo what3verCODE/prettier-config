@@ -1,11 +1,11 @@
 {
-  "extends": "@tsconfig/strictest/tsconfig.json",
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "verbatimModuleSyntax": true
-  },
-  "include": ["src", "reset.d.ts"],
-  "exclude": ["dist"]
+    "extends": "@tsconfig/strictest/tsconfig.json",
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "verbatimModuleSyntax": true
+    },
+    "include": ["src", "reset.d.ts"],
+    "exclude": ["dist"]
 }
