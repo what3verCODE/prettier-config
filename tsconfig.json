@@ -1,12 +1,11 @@
 {
+  "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
     "target": "ESNext",
-    "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
+    "verbatimModuleSyntax": true
   },
-  "include": ["**/*.ts"]
+  "include": ["src", "reset.d.ts"],
+  "exclude": ["dist"]
 }
