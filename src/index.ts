@@ -27,10 +27,10 @@ export default function exbotanical({
       xml: true,
       shell: true,
       toml: true,
-      nginx: false,
-      properties: false,
-      sql: false,
-      solidity: false,
+      nginx: true,
+      properties: true,
+      sql: true,
+      solidity: true,
     }
   }
 
