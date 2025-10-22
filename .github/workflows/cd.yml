@@ -1,7 +1,7 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
-name: Node.js Package
+name: Release
 
 on:
     release:
@@ -12,13 +12,24 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - uses: actions/setup-node@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
               with:
                   node-version: 20
-            - run: npm ci
-            - run: npm test
 
-    publish-gpr:
+            - name: Install pnpm
+              uses: pnpm/action-setup@v2
+              with:
+                  version: 10.14.0
+
+            - name: Install dependencies
+              run: pnpm install --frozen-lockfile
+
+            - name: Build
+              run: pnpm run build
+
+    publish:
         needs: build
         runs-on: ubuntu-latest
         permissions:
@@ -39,14 +50,6 @@ jobs:
 
             - name: Install dependencies
               run: pnpm install --frozen-lockfile
-
-            - name: Build
-              run: pnpm run build
-
-            - name: Generate changelog
-              run: npx changelogithub
-              env:
-                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
             - name: Publish package
               run: pnpm publish
