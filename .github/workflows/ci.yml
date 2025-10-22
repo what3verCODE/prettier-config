@@ -13,7 +13,7 @@ jobs:
         runs-on: ${{ matrix.os }}
         strategy:
             matrix:
-                node: [lts/*]
+                node: [22, 24]
                 os: [ubuntu-latest, windows-latest, macos-latest]
             fail-fast: false
 
@@ -28,10 +28,10 @@ jobs:
             - name: Install pnpm
               uses: pnpm/action-setup@v2
               with:
-                  version: 9
+                  version: 10.14.0
 
             - name: Install dependencies
-              run: pnpm install
+              run: pnpm install --frozen-lockfile
 
             - name: Build
               run: pnpm run build

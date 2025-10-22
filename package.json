@@ -1,7 +1,7 @@
 {
     "name": "@what3vercode/prettier-config",
     "type": "module",
-    "version": "1.0.1",
+    "version": "0.0.0",
     "private": false,
     "description": "Fork of Matthew Zito's prettier config",
     "author": "Aleksandr Nokhrin <nokhrin.alni@gmail.com> (https://github.com/what3vercode/)",
@@ -32,15 +32,10 @@
     "scripts": {
         "build": "rslib build",
         "lint": "eslint .",
-        "pretest": "pnpm build",
-        "test": "vitest --run",
-        "test:dev": "vitest",
-        "prepack": "pnpm build",
-        "prepare": "simple-git-hooks",
         "preformatting": "pnpm build",
         "formatting": "prettier . --check",
         "typecheck": "tsc --noEmit",
-        "release": "bumpp && npm publish"
+        "prepare": "simple-git-hooks"
     },
     "peerDependencies": {
         "@prettier/plugin-xml": "^3.4.1",
