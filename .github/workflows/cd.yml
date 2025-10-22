@@ -41,8 +41,7 @@ jobs:
             - name: Setup Node.js
               uses: actions/setup-node@v4
               with:
-                  node-version: 20
-                  cache: 'pnpm'
+                  node-version: 24
                   registry-url: 'https://npm.pkg.github.com'
 
             - name: Install pnpm
