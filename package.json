@@ -32,15 +32,10 @@
     "scripts": {
         "build": "rslib build",
         "lint": "eslint .",
-        "pretest": "pnpm build",
-        "test": "vitest --run",
-        "test:dev": "vitest",
-        "prepack": "pnpm build",
-        "prepare": "simple-git-hooks",
         "preformatting": "pnpm build",
         "formatting": "prettier . --check",
         "typecheck": "tsc --noEmit",
-        "release": "bumpp && npm publish"
+        "prepare": "simple-git-hooks"
     },
     "peerDependencies": {
         "@prettier/plugin-xml": "^3.4.1",
