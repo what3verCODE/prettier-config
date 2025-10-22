@@ -1,7 +1,7 @@
 {
     "name": "@what3vercode/prettier-config",
     "type": "module",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "private": false,
     "description": "Fork of Matthew Zito's prettier config",
     "author": "Aleksandr Nokhrin <nokhrin.alni@gmail.com> (https://github.com/what3vercode/)",
