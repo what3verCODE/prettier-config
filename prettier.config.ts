@@ -1,5 +1,5 @@
-import exbotanical from './dist/esm/index.js';
+import {defineConfig} from './dist/esm/index.js';
 
-export default exbotanical({
+export default defineConfig({
     plugins: 'all',
 });

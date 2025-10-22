@@ -8,7 +8,7 @@ export interface OptionsPrettier {
     overrides?: Options;
 }
 
-export const PRETTIER_OPTIONS: Options = {
+const PRETTIER_OPTIONS: Options = {
     useTabs: false,
     singleQuote: true,
     trailingComma: 'es5',
@@ -19,7 +19,7 @@ export const PRETTIER_OPTIONS: Options = {
     bracketSpacing: false,
 };
 
-export default function exbotanical({plugins: pluginOpts = {}, overrides = {}}: OptionsPrettier): Config {
+export function defineConfig({plugins: pluginOpts = {}, overrides = {}}: OptionsPrettier): Config {
     if (pluginOpts === 'all') {
         // eslint-disable-next-line no-param-reassign -- non-library or app, just a config
         pluginOpts = {

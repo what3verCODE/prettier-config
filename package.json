@@ -1,11 +1,12 @@
 {
-    "name": "@exbotanical/prettier-config",
+    "name": "@what3vercode/prettier-config",
     "type": "module",
     "version": "1.0.1",
     "private": false,
-    "description": "Zito's prettier config",
-    "author": "Matthew Zito <exbotanical@protonmail.com>",
+    "description": "Fork of Matthew Zito's prettier config",
+    "author": "Aleksandr Nokhrin <nokhrin.alni@gmail.com> (https://github.com/what3vercode/)",
     "license": "MIT",
+    "homepage": "https://github.com/what3vercode/eslint-config",
     "keywords": [
         "prettier",
         "prettier-config"
